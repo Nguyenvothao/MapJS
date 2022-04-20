@@ -40,4 +40,10 @@ var totalCoin = courses.reduce(function(total, currentValue)
 {
     return total + currentValue.Coin;
 }, 0);
-console.log(totalCoin);
+//console.log(totalCoin);
+var numbers = [2, 4, 6, 8];
+var totalnumbers = numbers.reduce(function(total, currentValue)
+{
+    return total+currentValue;
+}, 0)
+console.log(totalnumbers);
