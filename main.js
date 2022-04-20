@@ -1,37 +1,43 @@
 var courses = [
     {
-        index: 1,
+        id: 1,
         course: 'Javascript',
         Coin: 200
     }, 
 
     {
-        index: 2,
+        id: 2,
         course: 'Python',
         Coin: 200
     }, 
 
     {
-        index: 1,
+        id: 1,
         course: 'PHP',
         Coin: 250
     }, 
 
     {
-        index: 1,
+        id: 1,
         course: 'Html',
         Coin: 300
     }, 
 ];
 
-function CoursesHandler(course)
+function CoursesHandler(course, index)
 {
     return {
-        index: course.index,
+        id: course.id,
         course: `Khóa học: ${course.name}`,
-        Coin: `Gia: ${course.Coin}` 
+        Coin: `Gia: ${course.Coin}` ,
+        index: index
     }
 }
 
 var newCourses = courses.map(CoursesHandler);
-console.log(newCourses);
+//console.log(newCourses);
+var totalCoin = courses.reduce(function(total, currentValue)
+{
+    return total + currentValue.Coin;
+}, 0);
+console.log(totalCoin);
