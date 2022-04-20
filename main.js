@@ -46,4 +46,10 @@ var totalnumbers = numbers.reduce(function(total, currentValue)
 {
     return total+currentValue;
 }, 0)
-console.log(totalnumbers);
+//console.log(totalnumbers);
+var randomNumbers = [1, 2, [3, 5], 7, [2, 6]];
+var flatArray = randomNumbers.reduce(function(flatOuput, depthItem)
+{
+    return flatOuput.concat(depthItem);
+}, []);
+console.log(flatArray);
