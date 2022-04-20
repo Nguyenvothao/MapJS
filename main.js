@@ -24,6 +24,7 @@ var courses = [
     }, 
 ];
 
+var languages = ['Js', 'Php', 'Python']
 function CoursesHandler(course, index)
 {
     return {
@@ -52,4 +53,18 @@ var flatArray = randomNumbers.reduce(function(flatOuput, depthItem)
 {
     return flatOuput.concat(depthItem);
 }, []);
-console.log(flatArray);
+//console.log(flatArray);
+//call back
+Array.prototype.map2 = function(callback)
+{
+    var lengthArray=this.length;
+    for (var i=0; i<lengthArray; i++)
+    {
+        callback(this[i], i);
+    }
+}
+
+languages.map2(function(index, course)
+{
+    console.log(index, course);
+})
