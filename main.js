@@ -64,7 +64,34 @@ Array.prototype.map2 = function(callback)
     }
 }
 
-languages.map2(function(index, course)
+// languages.map2(function(index, course)
+// {
+//     console.log(index, course);
+// })
+
+var objects=['Php', 'Javscript', 'Python'];
+var i =[1, 3, 5, 7];
+Array.prototype.map3 = function(callback)
 {
-    console.log(index, course);
+    var lengthI= this.length, a=[];
+    for(var i=0; i< lengthI; i++)
+    {
+        var result=callback(this[i], i);
+        a.push(result);
+    }
+    return  a;
+}
+
+var totali = i.map3(function(valuee, indexx)
+{
+    return valuee;
 })
+ console.log(totali);
+
+
+// var totali=i.map(function(curentValues, index){
+//     return curentValues;
+// }, 0);
+// console.log(totali);
+
+//console.log(totali);
